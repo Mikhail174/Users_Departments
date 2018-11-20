@@ -33,7 +33,9 @@
                     <asp:Label ID="Label3" runat="server" Text="Departament"></asp:Label>
                 </td>
                 <td colspan="2">
-                    <asp:DropDownList ID="ddlDepartament" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="NameDep" DataValueField="NameDep"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlDepartament" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="NameDep" DataValueField="NameDep" AppendDataBoundItems="True"  >
+                        
+                    </asp:DropDownList>
                 </td>
                </tr>
               <tr>
@@ -41,8 +43,9 @@
                    
                 </td>
                 <td colspan="2">
-                    <asp:Button ID="btnSave" runat="server" Text="Save" />
+                    <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
                     <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+                    <asp:Button ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
                     <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
                 </td>
                </tr>
@@ -66,12 +69,12 @@
             <br />
             <asp:GridView ID="gvUser" runat="server" AutoGenerateColumns="false">
                 <Columns>
-                    <asp:BoundField DataField ="FName " HeaderText="FName" />
-                    <asp:BoundField DataField ="LName " HeaderText=" LName" />
-                    <asp:BoundField DataField ="Department " HeaderText="Department" />
+                    <asp:BoundField DataField ="FName" HeaderText="FName" />
+                    <asp:BoundField DataField ="LName" HeaderText="LName" />
+                    <asp:BoundField DataField ="NameDep" HeaderText="NameDep" />
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="linkView" runat="server" CommandArgument ='<%# Eval ("UserId")  %>' >View</asp:LinkButton>
+                            <asp:LinkButton ID="linkView" runat="server" CommandArgument ='<%# Eval ("FName")  %>' OnClick="lnk_OnClick" >View</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

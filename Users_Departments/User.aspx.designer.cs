@@ -103,15 +103,6 @@ namespace Users_Departments {
         protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
-        /// Button1 элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
         /// btnClear элемент управления.
         /// </summary>
         /// <remarks>

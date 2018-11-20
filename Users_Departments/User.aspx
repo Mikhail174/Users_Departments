@@ -44,8 +44,7 @@
                 </td>
                 <td colspan="2">
                     <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
-                    <asp:Button ID="btnDelete" runat="server" Text="Delete" />
-                    <asp:Button ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
+                    <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
                     <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
                 </td>
                </tr>
@@ -74,13 +73,13 @@
                     <asp:BoundField DataField ="NameDep" HeaderText="NameDep" />
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="linkView" runat="server" CommandArgument ='<%# Eval ("FName")  %>' OnClick="lnk_OnClick" >View</asp:LinkButton>
+                            <asp:LinkButton ID="linkView" runat="server" CommandArgument ='<%# Eval ("UserId")  %>' OnClick="lnk_OnClick" >View</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TestDBConnectionString %>" SelectCommand="SELECT [NameDep] FROM [Departments]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TestDBConnectionString %>" SelectCommand="SELECT [NameDep] FROM [Departments]" ProviderName="System.Data.SqlClient"></asp:SqlDataSource>
     </form>
 </body>
 </html>

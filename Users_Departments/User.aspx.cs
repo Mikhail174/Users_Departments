@@ -109,7 +109,7 @@ namespace Users_Departments
             sqlCmd.Parameters.AddWithValue("@FName", txtFName.Text.Trim());
             sqlCmd.Parameters.AddWithValue("@LName", txtLName.Text.Trim());
             sqlCmd.Parameters.AddWithValue("@NameDep", ddlDepartament.SelectedValue.Trim());
-            sqlCmd.Parameters.AddWithValue("@DepId", SqlDbType.Int);
+            sqlCmd.Parameters.AddWithValue("@DepId", SqlDbType.Int);//
             sqlCmd.ExecuteNonQuery();
             sqlCon.Close();
             Clear();
